@@ -1,0 +1,45 @@
+<%= form_for(@tone) do |f| %>
+  <% if @tone.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tone.errors.count, "error") %> prohibited this tone from being saved:</h2>
+
+      <ul>
+      <% @tone.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :short %><br>
+    <%= f.text_area :short %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :lang %><br>
+    <%= f.text_field :lang %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :de_short %><br>
+    <%= f.text_area :de_short %>
+  </div>
+  <div class="field">
+    <%= f.label :de_body %><br>
+    <%= f.text_area :de_body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

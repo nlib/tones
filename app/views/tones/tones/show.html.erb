@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tone.name %>
+</p>
+
+<p>
+  <strong>Short:</strong>
+  <%= @tone.short %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @tone.body %>
+</p>
+
+<p>
+  <strong>Lang:</strong>
+  <%= @tone.lang %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tone.description %>
+</p>
+
+<p>
+  <strong>De short:</strong>
+  <%= @tone.de_short %>
+</p>
+
+<p>
+  <strong>De body:</strong>
+  <%= @tone.de_body %>
+</p>
+
+<%= link_to 'Edit', edit_tone_path(@tone) %> |
+<%= link_to 'Back', tones_path %>
