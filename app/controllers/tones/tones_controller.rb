@@ -25,8 +25,8 @@ module Tones
     # POST /tones
     def create
       @tone = Tone.new(tone_params)
-
       if @tone.save
+        Rails.cache.clear
         redirect_to @tone, notice: 'Tone was successfully created.'
       else
         render :new
@@ -36,6 +36,7 @@ module Tones
     # PATCH/PUT /tones/1
     def update
       if @tone.update(tone_params)
+        Rails.cache.clear
         redirect_to @tone, notice: 'Tone was successfully updated.'
       else
         render :edit
