@@ -1,0 +1,8 @@
+Description:
+    Copies migrations to your application
+
+Example:
+    rails generate tones
+
+    This will create:
+        db/migrate/20151001095705_create_tones_tones.tones.rb
