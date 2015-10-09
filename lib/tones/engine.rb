@@ -1,4 +1,4 @@
-require 'admin_contents/view_helpers'
+require 'tones/view_helpers'
 module Tones
   class Engine < ::Rails::Engine
     isolate_namespace Tones
