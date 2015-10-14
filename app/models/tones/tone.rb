@@ -41,34 +41,13 @@ module Tones
       content
     end
 
-    def self.copy_german
-      germans = Tone.where(:lang => "de")
-      germans.each do |g|
-        content = Tone.where(:lang => "en", :name => g.name).first
-        if content.blank?
-          content = Tone.new
-          content.name = g.name
-        end
-        content.de_short =  g.short
-        content.de_body = g.body
-        g.destroy
-        content.save
-      end
-    end
-
     require 'csv'
 
     def self.write_tones
       CSV.open(File.join(Rails.root, '/public/tones.csv'), 'w') do |writer|
         writer << ["name", "description", "short", "body", "de_short", "de_body"]
         Tone.order("name ASC").each do |c|
-          # body is HTML formatted text that can only be edited online
-          if c.body.present?
-            mes = "Formatted text, please edit online"
-          else
-            mes = c.description
-          end
-          writer << [c.name, mes, c.short, "", c.de_short, ""]
+          writer << [c.name, c.description, c.short, c.body, c.de_short, c.de_body]
         end
       end
     end
@@ -78,10 +57,7 @@ module Tones
       csv = CSV.parse(csv_text, :headers => true)
       csv.each do |row|
         content = row.to_hash
-        # body is HTML formatted text that can only be edited online
-        if content["body"].blank?
-          Tone.find_or_create_by(name: content["name"]).update_attributes(content)
-        end
+        Tone.find_or_create_by(name: content["name"]).update_attributes(content)
         if content["description"] == "delete"
           tone = Tone.find_by(name: content["name"])
           tone.destroy if tone.present?
