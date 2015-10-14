@@ -20,7 +20,7 @@ module Tones
 
     test "should create tone" do
       assert_difference('Tone.count') do
-        post :create, tone: { body: @tone.body, de_body: @tone.de_body, de_short: @tone.de_short, description: @tone.description, lang: @tone.lang, name: @tone.name, short: @tone.short }
+        post :create, tone: { body: @tone.body, de_body: @tone.de_body, de_short: @tone.de_short, description: @tone.description, name: @tone.name, short: @tone.short }
       end
 
       assert_redirected_to tone_path(assigns(:tone))
@@ -37,7 +37,7 @@ module Tones
     end
 
     test "should update tone" do
-      patch :update, id: @tone, tone: { body: @tone.body, de_body: @tone.de_body, de_short: @tone.de_short, description: @tone.description, lang: @tone.lang, name: @tone.name, short: @tone.short }
+      patch :update, id: @tone, tone: { body: @tone.body, de_body: @tone.de_body, de_short: @tone.de_short, description: @tone.description, name: @tone.name, short: @tone.short }
       assert_redirected_to tone_path(assigns(:tone))
     end
 

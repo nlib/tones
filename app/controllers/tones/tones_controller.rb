@@ -57,7 +57,7 @@ module Tones
 
       # Only allow a trusted parameter "white list" through.
       def tone_params
-        params.require(:tone).permit(:name, :short, :body, :lang, :description, :de_short, :de_body)
+        params.require(:tone).permit(:name, :short, :body, :description, :de_short, :de_body)
       end
   end
 end

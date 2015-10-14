@@ -1,7 +1,7 @@
 module Tones
   class Tone < ActiveRecord::Base
 
-    validates :name, :uniqueness => { scope: :lang }
+    validates :name, :uniqueness => true
     validates :name, :presence => true
 
     def self.content(name, params=[])

@@ -8,10 +8,9 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Description</th>
       <th>Short</th>
       <th>Body</th>
-      <th>Lang</th>
-      <th>Description</th>
       <th>De short</th>
       <th>De body</th>
       <th colspan="3">Manage</th>
@@ -22,15 +21,14 @@
     <% @tones.each do |tone| %>
       <tr>
         <td><%= tone.name %></td>
+        <td><%= tone.description %></td>
         <td><%= tone.short %></td>
         <td><%= tone.body %></td>
-        <td><%= tone.lang %></td>
-        <td><%= tone.description %></td>
         <td><%= tone.de_short %></td>
         <td><%= tone.de_body %></td>
-        <td><%= link_to 'Show', tone %></td>
-        <td><%= link_to 'Edit', edit_tone_path(tone) %></td>
-        <td><%= link_to 'Destroy', tone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', tone %>
+            <%= link_to 'Edit', edit_tone_path(tone) %>
+            <%= link_to 'Destroy', tone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
