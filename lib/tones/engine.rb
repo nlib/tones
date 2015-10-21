@@ -5,6 +5,7 @@ module Tones
 
     initializer "tones.view_helpers" do
       ActionView::Base.send :include, ViewHelpers
+      ActionController::Base.send :include, ViewHelpers
     end
 
   end
