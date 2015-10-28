@@ -22,9 +22,11 @@ namespace :tones do
     if unused_string.present? 
       puts "#{unused_string.size} unused translation #{'string'.pluralize(unused_string.size)} found in database \n\n"
       puts unused_string.map(&:name)
-      puts "#{unused_string.size} unused translation strings found in database" if unused_string.size > 20
+      Tones::Tone.where(id: unused_string.map(&:id)).delete_all
+      Tones::Tone.write_tones
+      puts "\n\n #{unused_string.size} unused translation #{'string'.pluralize(unused_string.size)} successfully removed from database"
     else
-      puts "All translation string are using application"
+      puts "All translation string are using in application"
     end
   end
 
