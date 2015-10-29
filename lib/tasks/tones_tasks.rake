@@ -3,7 +3,7 @@ namespace :tones do
   desc "Take all translation-strings from database and search in application, if any unused string is found then remove it from database and update tones.csv"
   task :delete_unused => :environment do
     unused_string = []
-    files = Dir['app/**/helpers/**/*', 'app/**/controllers/**/*', 'app/**/views/**/*', 'app/**/mailers/**/*'].select{|f| File.file?(f)}
+    files = Dir['app/**/helpers/**/*', 'app/**/controllers/**/*', 'app/**/models/**/*', 'app/**/views/**/*', 'app/**/mailers/**/*'].select{|f| File.file?(f)}
     Tones::Tone.all.each do |tone|
       is_found = false
       tone_strings = []
