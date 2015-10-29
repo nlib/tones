@@ -10,6 +10,11 @@ namespace :tones do
       tone_strings << 'to\(:' + tone.name + '\)'
       tone_strings << 'to\(\"' + tone.name + '\"\)'
       tone_strings << 'to\(\'' + tone.name + '\'\)'
+      tone_strings << 'Tones::Tone.content\(:' + tone.name + '\)'
+      tone_strings << 'Tones::Tone.content\(\"' + tone.name + '\"\)'
+      tone_strings << 'Tones::Tone.content\(\'' + tone.name + '\'\)'
+
+
       files.each do |f|
         tone_strings.each do |tnst|  
           is_found = open(f).grep(/#{tnst}/).present?
