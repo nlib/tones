@@ -7,12 +7,12 @@ namespace :tones do
     Tones::Tone.all.each do |tone|
       is_found = false
       tone_strings = []
-      tone_strings << 'to\(:' + tone.name + '\)'
-      tone_strings << 'to\(\"' + tone.name + '\"\)'
-      tone_strings << 'to\(\'' + tone.name + '\'\)'
-      tone_strings << 'Tones::Tone.content\(:' + tone.name + '\)'
-      tone_strings << 'Tones::Tone.content\(\"' + tone.name + '\"\)'
-      tone_strings << 'Tones::Tone.content\(\'' + tone.name + '\'\)'
+      tone_strings << 'to\(:' + tone.name
+      tone_strings << 'to\(\"' + tone.name
+      tone_strings << 'to\(\'' + tone.name
+      tone_strings << 'Tones::Tone.content\(:' + tone.name
+      tone_strings << 'Tones::Tone.content\(\"' + tone.name
+      tone_strings << 'Tones::Tone.content\(\'' + tone.name
 
 
       files.each do |f|
