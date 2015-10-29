@@ -1,7 +1,7 @@
 namespace :tones do
 
-  desc "Take all translation strings from database and search in appication, if any unused string found then remove from database and update tones.csv"
-  task :remove_unused_string => :environment do
+  desc "Take all translation-strings from database and search in application, if any unused string is found then remove it from database and update tones.csv"
+  task :delete_unused => :environment do
     unused_string = []
     files = Dir['app/**/helpers/**/*', 'app/**/controllers/**/*', 'app/**/views/**/*', 'app/**/mailers/**/*'].select{|f| File.file?(f)}
     Tones::Tone.all.each do |tone|
@@ -26,7 +26,7 @@ namespace :tones do
       Tones::Tone.write_tones
       puts "\n\n #{unused_string.size} unused translation #{'string'.pluralize(unused_string.size)} successfully removed from database"
     else
-      puts "All translation string are using in application"
+      puts "All translation strings are used in the application"
     end
   end
 
