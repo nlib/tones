@@ -1,4 +1,8 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+#sign_out_tone{
+  float: right;
+  margin-top: 5px;	
+}
+.tones_sign_in{
+  position: relative;
+  top: 50px;
+}
