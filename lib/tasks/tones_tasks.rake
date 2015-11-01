@@ -5,6 +5,7 @@ namespace :tones do
     puts ""
     puts "Reading tones.csv"
     Tones::Tone.read_tones
+    Rails.cache.clear
   end
 
   desc "Write tones from database to tones.csv"
