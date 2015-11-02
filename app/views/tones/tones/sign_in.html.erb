@@ -1,0 +1,18 @@
+<div class="login-block">
+  <h2>Login to tones</h2>
+  <div class='row'>
+    <div class='tones_sign_in'>
+      <%= form_tag(sign_in_tones_path) do %>
+        <div class="form-group">
+          <%= label_tag 'password', 'Enter the password' %>
+          </br>
+          <%= password_field_tag 'password', '', class: 'form-control' %>
+        </div>
+        </br>
+        <div class="form-group">
+          <%= submit_tag 'Sign in', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
