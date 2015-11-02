@@ -46,7 +46,7 @@ module Tones
     def self.write_tones
       CSV.open(File.join(Rails.root, '/public/tones.csv'), 'w') do |writer|
         writer << ["name", "description", "short", "body", "de_short", "de_body"]
-        Tone.order("name ASC").each do |c|
+        Tone.order("created_at ASC").each do |c|
           writer << [c.name, c.description, c.short, c.body, c.de_short, c.de_body]
         end
       end
