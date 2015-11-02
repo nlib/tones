@@ -1,8 +1,46 @@
 #sign_out_tone{
-  float: right;
-  margin-top: 5px;	
+  float:right;
+  margin-top:5px;	
 }
 .tones_sign_in{
-  position: relative;
-  top: 50px;
+  position:relative;
+}
+.login-block{
+	width:40%;
+  margin:80px auto;
+  border:1px #ccc solid;
+  padding: 40px;
+  text-align:center;
+  background:#337ab7;
+  color:#fff;
+  border-radius:15px;
+  box-shadow:0px -1px 9px 0px #888888;
+}
+.login-block h2{
+  display:inline-block;
+  margin-top:0px;
+  text-align:left;
+  width:100%;
+}
+.login-block .form-group{
+  margin-bottom: 15px;
+}
+.login-block .row{
+  margin:0px;
+  text-align:left;
+}
+.login-block .form-group input.btn{
+  background:#fff !important;
+  color:#337ab7;
+  font-weight:700;
+}
+@media screen and (max-width: 767px){
+  .login-block{
+    width:100%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width:1024px){
+  .login-block{
+    width:100%;
+  }
 }

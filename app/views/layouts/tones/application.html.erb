@@ -12,12 +12,8 @@
       <div id='sign_out_tone'>
         <%= link_to 'Sign out', sign_out_tones_path, method: :delete if session['tones_access'] == true %>
       </div>
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <%= render :partial => '/layouts/tones/alert'  %>
-          <%= yield %>
-        </div>
-      </div>
+      <%= render :partial => '/layouts/tones/alert' %>
+      <%= yield %>
     </div>
   </section>
 </body>
