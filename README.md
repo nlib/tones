@@ -24,8 +24,7 @@ $ rails generate tones
 
 ## Usage
 
-Tones provide translation feature in rails application.
-It also provide user interface to manage translation, and import export feature for translation strings through file.
+Tones stores rails translations in the database using a model approach. All strings are cached, so no db queries are made when loading the views. It also provides a user interface to manage translations. You can import/export translation strings to CSV.
 
 All visible strings should be in the form
 to(:this_is_my_string)
@@ -38,18 +37,21 @@ if no translation is available.
 
 Use only small letters with underscores.
 
-## Create and Update transalation using user interface
+## Create and Update transalations using user interface
 
-Type /tones after root url of your app and open it. Then click on 'New tones' link fill detail about translation and save it. Can update and delete it later.
+ You can find a CRUD interface to your translations at /tones. Important: To protect your translations you need to add a password into your environment like so:
+```
+TONES_PASSWORD='XYZ'
+```
+If that environment variable is not set, your translations are open to edit.
+ 
 
 ## Adding translations to the database from csv:
 
 To export translation content to file
 
-Run the rails console: 
-
-```console
-Tones::Tone.write_tones
+```
+rake tones:write
 ```
 Upload the file "public/tones.csv" to Google Docs (have conversion to google formats ON)
 
@@ -60,7 +62,7 @@ To import from file
 On rails Console: 
 
 ```console
-Tones::Tone.read_tones
+rake tones:read
 ```
 
 Push the code to live, and run the command on the console again
