@@ -9,11 +9,11 @@
 <body>
   <section>
     <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <%= yield %>
-        </div>
+      <div id='sign_out_tone'>
+        <%= link_to 'Sign out', sign_out_tones_path, method: :delete if session['tones_access'] == true %>
       </div>
+      <%= render :partial => '/layouts/tones/alert' %>
+      <%= yield %>
     </div>
   </section>
 </body>
