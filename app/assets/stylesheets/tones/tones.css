@@ -1,6 +1,6 @@
 #sign_out_tone{
   float:right;
-  margin-top:5px;	
+  margin-top:5px;
 }
 .tones_sign_in{
   position:relative;
@@ -51,8 +51,12 @@
 .table-responsive table thead tr th,.table-responsive table tbody tr td{
   border-color:#000;
 }
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
 .new-btn{
-  margin: 15px 0px !important;  
+  margin: 15px 0px !important;
 }
 @media screen and (max-width: 767px){
   .login-block{
