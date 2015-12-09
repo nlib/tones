@@ -36,17 +36,19 @@ If no translation is available, this will display like this:
    This is my string
 ```
 
-## Create and Update transalations using user interface
+## Create and Update Translations Online
 
 You can find a CRUD interface to your translations at 
 ```
    /tones
 ```
-Important: To protect your translations you need to add a password into your environment like so:
+**Important:** To protect your translations you need to add a password into your environment like so:
+
 ```
 TONES_PASSWORD='MY-PASSWORD'
 ```
 **If that environment variable is not set, your translations are open for everyone to edit!**
+
 
 ## Import / Export to CSV:
 
@@ -65,6 +67,7 @@ to your version control!
 When you write to CSV, read is automatically called before. Since the write command will overwrite your *tones.csv*, this will prevent translations to be deleted.
 
 **Google Docs**
+
 You can upload the file "public/tones.csv" to Google Docs (have conversion to google formats ON)
 Edit the file online and download as CSV. Overwrite the old file.
 
