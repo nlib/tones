@@ -9,7 +9,7 @@ namespace :tones do
   end
 
   desc "Write tones from database to tones.csv"
-  task :write => :environment do
+  task :write => [:environment, :read] do
     puts ""
     puts "Writing tones.csv"
     Tones::Tone.write_tones
