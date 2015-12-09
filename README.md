@@ -38,13 +38,17 @@ If no translation is available, this will display like this:
 
 ## Create and Update transalations using user interface
 
-You can find a CRUD interface to your translations at /tones. Important: To protect your translations you need to add a password into your environment like so:
+You can find a CRUD interface to your translations at 
+```
+   /tones
+```
+Important: To protect your translations you need to add a password into your environment like so:
 ```
 TONES_PASSWORD='MY-PASSWORD'
 ```
 **If that environment variable is not set, your translations are open for everyone to edit!**
 
-## Adding translations to the database from csv:
+## Import / Export to CSV:
 
 You can import and export translations to a CSV file. The file is currently stored in */public/tones.csv*. Please add this file
 to your version control!
