@@ -36,7 +36,7 @@ If no translation is available, this will display like this:
    This is my string
 ```
 
-## Create and Update Translations Online
+### Create and Update Translations Online
 
 You can find a CRUD interface to your translations at 
 ```
@@ -50,7 +50,7 @@ TONES_PASSWORD='MY-PASSWORD'
 **If that environment variable is not set, your translations are open for everyone to edit!**
 
 
-## Import / Export to CSV:
+### Import / Export to CSV:
 
 You can import and export translations to a CSV file. The file is currently stored in */public/tones.csv*. Please add this file
 to your version control!
@@ -71,6 +71,6 @@ When you write to CSV, read is automatically called before. Since the write comm
 You can upload the file "public/tones.csv" to Google Docs (have conversion to google formats ON)
 Edit the file online and download as CSV. Overwrite the old file.
 
-## Live Deploy
+### Live Deploy
 After pushing code live, run the *tones:read* command to upate your database.
 
